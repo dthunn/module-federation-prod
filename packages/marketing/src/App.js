@@ -11,6 +11,7 @@ const App = () => {
       <StylesProvider>
         <BrowserRouter>
           <Switch>
+            {/* change */}
             <Route exact path='/pricing' component={Pricing} />
             <Route path='/' component={Landing} />
           </Switch>
