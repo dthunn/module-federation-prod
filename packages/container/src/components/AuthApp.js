@@ -1,5 +1,5 @@
-import React, { useRef, useEffect } from 'react'
 import { mount } from 'auth/AuthApp'
+import React, { useRef, useEffect } from 'react'
 import { useHistory } from 'react-router-dom'
 
 export default ({ onSignIn }) => {
@@ -9,7 +9,6 @@ export default ({ onSignIn }) => {
   useEffect(() => {
     const { onParentNavigate } = mount(ref.current, {
       initialPath: history.location.pathname,
-      initialPath: history.location.pathname,
       onNavigate: ({ pathname: nextPathname }) => {
         const { pathname } = history.location
 
@@ -17,9 +16,7 @@ export default ({ onSignIn }) => {
           history.push(nextPathname)
         }
       },
-      onSignin: () => {
-        onSignIn()
-      },
+      onSignIn,
     })
 
     history.listen(onParentNavigate)
